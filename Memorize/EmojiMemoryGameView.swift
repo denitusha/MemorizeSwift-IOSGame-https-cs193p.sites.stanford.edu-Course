@@ -9,33 +9,33 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
     
-    @ObservedObject var viewModel: EmojiMemoryGame
+    @ObservedObject var game: EmojiMemoryGame
      
     var body: some View {
         VStack{
            
             HStack{
-                Text(viewModel.theme.name)
+                Text(game.theme.name)
                 Spacer()
                 Button("New Game") {
-                    viewModel.newGame()
+                    game.newGame()
                 }.foregroundColor(.black)
                 Spacer()
-                Text("Score: \(viewModel.score)")
+                Text("Score: \(game.score)")
             }.padding(.horizontal)
 
             ScrollView{
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
-                    ForEach(viewModel.cards) { card in
+                    ForEach(game.cards) { card in
                         CardView(card: card)
                             .aspectRatio(2/3, contentMode: .fit)
                             .onTapGesture {
-                                viewModel.choose(card)
+                                game.choose(card)
                             }
                     }
                 }
             }
-            .foregroundColor(viewModel.getColour(themeColor: viewModel.theme.color))
+            .foregroundColor(game.getColour(themeColor: game.theme.color))
             .padding(.all)
         }
     }
@@ -99,7 +99,7 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGame()
-        EmojiMemoryGameView(viewModel: game)
+        EmojiMemoryGameView(game: game)
             .preferredColorScheme(.light)
     }
 }
