@@ -25,7 +25,7 @@ struct EmojiMemoryGameView: View {
             }.padding(.horizontal)
 
             ScrollView{
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                     ForEach(game.cards) { card in
                         CardView(card: card)
                             .aspectRatio(2/3, contentMode: .fit)
