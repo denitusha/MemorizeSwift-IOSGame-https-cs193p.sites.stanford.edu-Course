@@ -24,9 +24,6 @@ struct EmojiMemoryGameView: View {
                 Text("Score: \(game.score)")
             }.padding(.horizontal)
 
-//            ScrollView{
-//                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-//                    ForEach(game.cards) { card in
             AspectVGrid(items: game.cards, aspectRatio: 2/3, content: { card in 
                 CardView(card: card)
                     .padding(4)
@@ -34,10 +31,6 @@ struct EmojiMemoryGameView: View {
                         game.choose(card)
                     }
             })
-                        
-//                    }
-//                }
-//            }
             .foregroundColor(game.getColour(themeColor: game.theme.color))
             .padding(.all)
         }
@@ -56,6 +49,8 @@ struct CardView: View {
                 if card.isFaceUp {
                     shape.fill().foregroundColor(.white)
                     shape.strokeBorder(lineWidth: DrawingConstants.lineWidth)
+                    Pie(startAngle: Angle(degrees: -90), endAngle: Angle(degrees: 20))
+                        .padding(6).opacity(0.4)
                     Text(card.content).font(font(in: geometry.size))
                 }else if card.isMatched{
                     shape.opacity(0)
@@ -73,7 +68,7 @@ struct CardView: View {
     private struct DrawingConstants{
         static let cornerRadius: CGFloat = 10
         static let lineWidth: CGFloat = 3
-        static let fontScale: CGFloat = 0.7
+        static let fontScale: CGFloat = 0.65
     }
 }
 

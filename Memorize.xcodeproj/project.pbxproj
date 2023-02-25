@@ -15,6 +15,7 @@
 		16BDEF1C299AF391001F14E8 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BDEF1B299AF391001F14E8 /* MemoryGame.swift */; };
 		16D3939029A7F04000DC7132 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D3938F29A7F04000DC7132 /* Theme.swift */; };
 		16D4E15A29AA51D10034C39D /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4E15929AA51D10034C39D /* AspectVGrid.swift */; };
+		16D4E15C29AA90470034C39D /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D4E15B29AA90470034C39D /* Pie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		16BDEF1B299AF391001F14E8 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		16D3938F29A7F04000DC7132 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		16D4E15929AA51D10034C39D /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		16D4E15B29AA90470034C39D /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				16D3938F29A7F04000DC7132 /* Theme.swift */,
 				1612F53A299804E500FE7D68 /* MemorizeApp.swift */,
 				1612F53C299804E500FE7D68 /* EmojiMemoryGameView.swift */,
+				16D4E15B29AA90470034C39D /* Pie.swift */,
 				16D4E15929AA51D10034C39D /* AspectVGrid.swift */,
 				16BDEF1B299AF391001F14E8 /* MemoryGame.swift */,
 				1607C61B299BB73500679C9C /* EmojiMemoryGame.swift */,
@@ -153,6 +156,7 @@
 				1612F53D299804E500FE7D68 /* EmojiMemoryGameView.swift in Sources */,
 				16D4E15A29AA51D10034C39D /* AspectVGrid.swift in Sources */,
 				16D3939029A7F04000DC7132 /* Theme.swift in Sources */,
+				16D4E15C29AA90470034C39D /* Pie.swift in Sources */,
 				1612F53B299804E500FE7D68 /* MemorizeApp.swift in Sources */,
 				1607C61C299BB73500679C9C /* EmojiMemoryGame.swift in Sources */,
 			);
