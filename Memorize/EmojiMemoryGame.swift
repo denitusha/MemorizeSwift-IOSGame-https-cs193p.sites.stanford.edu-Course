@@ -11,8 +11,22 @@ import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
     
+    private(set) var theme: Theme
+    @Published private var model: MemoryGame<String>
     typealias Card = MemoryGame<String>.Card
+    
+    var score: Int {
+       return model.score
+   }
   
+    var cards: Array<Card>{
+         model.cards
+    }
+    
+    func choose(_ card: Card){
+        model.choose(card)
+    }
+    
     private static func creatememoryGame (theme: Theme) -> MemoryGame<String> {
         let emojis: Array<String> = theme.emojis.shuffled()
         var cardsToShow: Int = theme.numberOfPairsToShow ?? emojis.count
@@ -21,8 +35,11 @@ class EmojiMemoryGame: ObservableObject {
         }
         return MemoryGame<String>(numberOfPairsOfcards: cardsToShow) { pairIndex in
             emojis[pairIndex]
-            
         }
+    }
+    
+    func shuffle()  {
+        model.shuffle()
     }
     
     func getColour(themeColor: String) ->  Color {
@@ -37,36 +54,17 @@ class EmojiMemoryGame: ObservableObject {
             return Color.red
         }
     }
-    
-    
-    
-    private(set) var theme: Theme
-    @Published private var model: MemoryGame<String>
-    
-     var score: Int {
-        return model.score
-    }
-    
+
     init(startingTheme: Theme? = nil) {
         let selectedTheme = startingTheme ?? Themes.randomElement()!
         theme = selectedTheme
         model = EmojiMemoryGame.creatememoryGame(theme: theme)
     }
     
-    
     func newGame(startingTheme: Theme? = nil) {
         let selectedTheme = startingTheme ?? Themes.randomElement()!
         theme = selectedTheme
         model = EmojiMemoryGame.creatememoryGame(theme: theme)
-    }
-    
-    var cards: Array<Card>{
-         model.cards
-    }
-    
-    // Mark: - Intent(s)
-    
-    func choose(_ card: Card){
-        model.choose(card)
+        
     }
 }
